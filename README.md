@@ -1,13 +1,20 @@
 <h1>📝 TypeScript Blog Post</h1>
-<p>A beginner-friendly guide to Interfaces, Types, and the keyof keyword in TypeScript.</p>
+<h2>Exploring Interfaces, Types, and the keyof Keyword</h2>
 
-<hr>
 
-<h2>Differences Between Interfaces and Types in TypeScript</h2>
 
-<p>If you are learning TypeScript, you might notice that there are <strong>interfaces</strong> and <strong>types</strong>. At first glance, they look very similar—they both let you define the structure of objects. But there are some key differences that make each of them better for certain situations.</p>
 
-<h3>What is an Interface?</h3>
+
+
+
+<h1>Differences Between Interfaces and Types in TypeScript</h1>
+
+<p>If you are learning TypeScript, you might notice that there are <strong>interfaces</strong> and <strong>types</strong>. 
+At first glance, they look very similar—they both let you define the structure of objects. 
+But there are some key differences that make each of them better for certain situations. Let’s break it down in simple terms.</p>
+
+<h2>What is an Interface?</h2>
+
 <p>An <strong>interface</strong> is like a blueprint for an object. It tells TypeScript what properties an object should have and their types. Interfaces are very useful when working with <strong>classes</strong> or when you want to clearly define the shape of an object.</p>
 
 <pre><code>interface User {
@@ -16,23 +23,25 @@
 }
 </code></pre>
 
-<p>You can also <strong>extend</strong> an interface:</p>
+<p>You can also <strong>extend</strong> an interface to create a new one:</p>
 
 <pre><code>interface Employee extends User {
   salary: number;
 }
 </code></pre>
 
-<p>Interfaces support <strong>declaration merging</strong>, meaning you can declare the same interface multiple times and TypeScript will merge them automatically:</p>
+<p>Another cool feature of interfaces is <strong>declaration merging</strong>. You can define the same interface more than once, and TypeScript will automatically combine them:</p>
 
 <pre><code>interface User {
   email: string;
 }
+
 // Now User → { name: string; age: number; email: string; }
 </code></pre>
 
-<h3>What is a Type?</h3>
-<p>A <strong>type</strong> is similar to an interface but more flexible. You can define objects, unions, intersections, tuples, or even primitive types.</p>
+<h2>What is a Type?</h2>
+
+<p>A <strong>type</strong> is similar to an interface but more flexible. You can use a type to define objects, but also <strong>unions, intersections, tuples, or even primitive types</strong>.</p>
 
 <pre><code>type ID = string | number;
 
@@ -47,9 +56,9 @@ type Person = {
 <pre><code>type Employee = Person & { salary: number };
 </code></pre>
 
-<p>Unlike interfaces, types cannot be merged once declared.</p>
+<p>Unlike interfaces, types <strong>cannot be declared twice</strong>. Once you create a type, you cannot merge it like interfaces.</p>
 
-<h3>Key Differences</h3>
+<h2>Key Differences in Simple Words</h2>
 
 <table>
   <tr>
@@ -79,19 +88,42 @@ type Person = {
   </tr>
 </table>
 
-<h3>When to Use Which?</h3>
+<h2>When to Use Which?</h2>
+
 <ul>
-  <li>Use <strong>interfaces</strong> for clear object blueprints, classes, and APIs.</li>
-  <li>Use <strong>types</strong> for unions, tuples, primitives, or complex type combinations.</li>
+  <li>Use <strong>interfaces</strong> when you want a clear object blueprint, like for classes or API responses.</li>
+  <li>Use <strong>types</strong> when you need more flexibility, like unions or complex type combinations.</li>
 </ul>
 
-<hr>
+<h2>Conclusion</h2>
 
-<h2>The <code>keyof</code> Keyword in TypeScript</h2>
+<p>Interfaces and types are both useful, but they have their own strengths:</p>
 
-<p>The <code>keyof</code> keyword allows you to get all property names of a type as a <strong>union of strings</strong>. This is useful for creating <strong>type-safe functions</strong>.</p>
+<ul>
+  <li>Interfaces → clean, clear, extendable, mergeable.</li>
+  <li>Types → flexible, can do unions and intersections.</li>
+</ul>
 
-<h3>Example</h3>
+<p>By knowing the differences, you can write <strong>cleaner, safer TypeScript code</strong> and avoid confusion later.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>The <code>keyof</code> Keyword in TypeScript?</h1>
+
+<p>The <code>keyof</code> keyword is used to get all the keys of a type as a <strong>union of string literals</strong>. 
+It is very useful when you want to write <strong>type-safe functions</strong> that only accept valid object property names.</p>
+
+<h2>Example:</h2>
 
 <pre><code>type User = {
   name: string;
@@ -111,15 +143,12 @@ console.log(getValue(person, "name")); // Works
 // console.log(getValue(person, "address")); // Error: "address" is not a key of User
 </code></pre>
 
-<h3>Why Use <code>keyof</code>?</h3>
+<h2>Why use <code>keyof</code>?</h2>
+
 <ul>
   <li>Ensures only valid keys are used.</li>
   <li>Prevents runtime errors from misspelled property names.</li>
   <li>Helps create reusable and type-safe utility functions.</li>
 </ul>
 
-<p>In short, <code>keyof</code> allows you to safely work with object keys, making your code more reliable and less error-prone.</p>
-
-<hr>
-
-<p>By understanding interfaces, types, and the <code>keyof</code> keyword, you can write <strong>cleaner, safer TypeScript code</strong> and avoid common pitfalls.</p>
+<p>In short, <code>keyof</code> allows you to safely work with object keys without worrying about typos or invalid properties, making your code more reliable.</p>

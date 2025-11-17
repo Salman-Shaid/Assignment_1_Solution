@@ -9,9 +9,7 @@ function formatValue(value: string | number | boolean): string | number | boolea
     return value;
   }  
 }
-// console.log(formatValue('hello')); // HELLO
-// console.log(formatValue(5));       // 50
-// console.log(formatValue(true));    // false
+
 
 
 function getLength(value: string | any[]) : number {
@@ -24,8 +22,6 @@ function getLength(value: string | any[]) : number {
     }
 }
 
-// console.log(getLength('typescript')); // 10
-// console.log(getLength([10, 20, 30, 40])); // 4
 
 
 class Person{
@@ -41,14 +37,9 @@ class Person{
         return `Name: ${this.name}, Age: ${this.age}`;
     }
 }
-
-const person1 = new Person("salman", 30);
-
-// console.log(person1.getDetails());
-
+const person1 = new Person("John Doe", 30);
 const person2 = new Person('Alice', 25);
 
-// console.log(person2.getDetails());
 
 
 type Item = {
@@ -68,7 +59,7 @@ const books = [
     
 ];
 
-// console.log(filterByRating(books));
+
 
 type User = {
     id: number;
@@ -90,7 +81,6 @@ const users = [
     
 ];
 
-// console.log(filterActiveUsers(users));
 
 
 interface Book {
@@ -152,10 +142,10 @@ function getUniqueValues(
     return result;
 }
 
-// const array1 = [1, 2, 3, 4, 5];
-// const array2 = [3, 4, 5, 6, 7]
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
 
-// console.log(getUniqueValues(array1, array2))
+
 
 
 
@@ -189,4 +179,4 @@ const products = [
     {name: 'Bag', price: 50, quantity: 1, discount: 20},
 ];
 
-console.log(calculateTotalPrice(products));
+

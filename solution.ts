@@ -161,7 +161,7 @@ function calculateTotalPrice(product: Products[]): number {
         return 0;
     }
 
-    const total = products.map(p => {
+    const total = product.map(p => {
         const basePrice = p.price*p.quantity;
         if(p.discount !== undefined){
             const discountAmount = (basePrice * p.discount) / 100;
@@ -178,5 +178,6 @@ const products = [
     {name: 'Notebook', price: 25, quantity: 3, discount: 10},
     {name: 'Bag', price: 50, quantity: 1, discount: 20},
 ];
+
 
 

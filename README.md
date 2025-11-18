@@ -1,4 +1,4 @@
-<h1>📝 TypeScript Blog Post</h1>
+<h1>&#128221; TypeScript Blog Post</h1>
 <h2>Exploring Interfaces, Types, and the keyof Keyword</h2>
 
 
@@ -9,9 +9,7 @@
 
 <h1>Differences Between Interfaces and Types in TypeScript</h1>
 
-<p>If you are learning TypeScript, you might notice that there are <strong>interfaces</strong> and <strong>types</strong>. 
-At first glance, they look very similar—they both let you define the structure of objects. 
-But there are some key differences that make each of them better for certain situations. Let’s break it down in simple terms.</p>
+<p>When learning TypeScript, you’ll see interfaces and types. They look similar but have key differences. Let’s keep it simple and see how they differ.</p>
 
 <h2>What is an Interface?</h2>
 
@@ -58,35 +56,7 @@ type Person = {
 
 <p>Unlike interfaces, types <strong>cannot be declared twice</strong>. Once you create a type, you cannot merge it like interfaces.</p>
 
-<h2>Key Differences in Simple Words</h2>
 
-<table>
-  <tr>
-    <th>Feature</th>
-    <th>Interface</th>
-    <th>Type</th>
-  </tr>
-  <tr>
-    <td>Can extend</td>
-    <td>✔ Yes (extends)</td>
-    <td>✔ Yes (&)</td>
-  </tr>
-  <tr>
-    <td>Can merge</td>
-    <td>✔ Yes</td>
-    <td>❌ No</td>
-  </tr>
-  <tr>
-    <td>Can do unions/tuples</td>
-    <td>❌ Limited</td>
-    <td>✔ Yes</td>
-  </tr>
-  <tr>
-    <td>Best for</td>
-    <td>Objects, Classes, APIs</td>
-    <td>Flexible types, unions, tuples</td>
-  </tr>
-</table>
 
 <h2>When to Use Which?</h2>
 

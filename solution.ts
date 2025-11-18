@@ -34,7 +34,7 @@ class Person{
     }
 
     getDetails(): string {
-        return `Name: ${this.name}, Age: ${this.age}`;
+        return `'Name: ${this.name}, Age: ${this.age}'`;
     }
 }
 const person1 = new Person("John Doe", 30);
@@ -178,6 +178,7 @@ const products = [
     {name: 'Notebook', price: 25, quantity: 3, discount: 10},
     {name: 'Bag', price: 50, quantity: 1, discount: 20},
 ];
+
 
 
 
